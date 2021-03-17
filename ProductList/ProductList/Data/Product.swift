@@ -18,7 +18,7 @@ struct Product: Codable {
   var brand: String?
   var brandName: String?
   var applicationUri: String?
-  var isTailored: String?
+  var isTailored: Bool?
   var additionalInformation: AdditionalInfo?
 }
 
@@ -27,4 +27,14 @@ struct AdditionalInfo: Codable {
     var termsUri: String?
     var eligibilityUri: String?
     var feesAndPricingUri: String?
+}
+
+struct GetProductsResponse: Codable {
+  var data: ProductList?
+  var links: Links?
+  var meta: Meta?
+}
+
+struct ProductList: Codable {
+  var products: [Product]?
 }
