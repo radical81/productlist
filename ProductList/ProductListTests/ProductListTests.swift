@@ -9,25 +9,27 @@ import XCTest
 @testable import ProductList
 
 class ProductListTests: XCTestCase {
-
+  
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+      
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+  
+  func testApiServiceFetchDataMock() {
+    let data = Data([0, 1, 0, 1])
+    let session = MockSession() // It's deprecated, I know. No alternative solution at this point.
+    session.data = data
+    let api = ApiService(session: session)
+    
+    api.fetchData(endpoint: "https://localhost", completion: { dataResult, response, error in
+      if error != nil {
+        XCTFail()
+      }
+      XCTAssertEqual(data, dataResult)
+      return
+    })
+  }
 }

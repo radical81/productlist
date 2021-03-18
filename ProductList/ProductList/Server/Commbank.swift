@@ -32,7 +32,7 @@ class Commbank {
   }
   
   func getProducts() {
-    ApiService.shared.fetchData(completion: { data, response, error in
+    ApiService.shared.fetchData(endpoint: Endpoints.products.rawValue,  completion: { data, response, error in
       if let error = error {
           self.handleClientError(error)
           return
