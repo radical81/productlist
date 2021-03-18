@@ -36,5 +36,11 @@ class ProductTableViewController: UITableViewController {
     cell.textLabel?.text = response?.data?.products?[indexPath.row].name
     return cell
   }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let productDetail = ProductDetailViewController()
+    productDetail.productId = response?.data?.products?[indexPath.row].productId
+    self.navigationController?.pushViewController(productDetail, animated: true)
+  }
 }
 

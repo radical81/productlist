@@ -18,6 +18,8 @@
 		8678DB302603727500700858 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678DB2F2603727500700858 /* MockSession.swift */; };
 		8678DB35260372E100700858 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678DB34260372E100700858 /* MockApiService.swift */; };
 		8678DB3B260374F000700858 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 8678DB3A260374F000700858 /* Products.json */; };
+		8678DB4F2603926300700858 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678DB4D2603926300700858 /* ProductDetailViewController.swift */; };
+		8678DB502603926300700858 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8678DB4E2603926300700858 /* ProductDetailViewController.xib */; };
 		8699D03726021BB400DA5958 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D03626021BB400DA5958 /* ProductTableViewController.swift */; };
 		8699D04126021CAE00DA5958 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D04026021CAE00DA5958 /* Product.swift */; };
 		8699D04626021F1100DA5958 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D04526021F1100DA5958 /* Links.swift */; };
@@ -62,6 +64,8 @@
 		8678DB2F2603727500700858 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		8678DB34260372E100700858 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		8678DB3A260374F000700858 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		8678DB4D2603926300700858 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		8678DB4E2603926300700858 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		8699D03626021BB400DA5958 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 		8699D04026021CAE00DA5958 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8699D04526021F1100DA5958 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		8657FF262601DB6D00EEE99D /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				8678DB54260393ED00700858 /* IB */,
 				8699D0542602200E00DA5958 /* Server */,
 				8699D0532602200600DA5958 /* Helpers */,
 				8699D05226021FFE00DA5958 /* Delegates */,
@@ -126,9 +131,7 @@
 				8699D03B26021BBC00DA5958 /* ViewControllers */,
 				8657FF272601DB6D00EEE99D /* AppDelegate.swift */,
 				8657FF292601DB6D00EEE99D /* SceneDelegate.swift */,
-				8657FF2D2601DB6D00EEE99D /* Main.storyboard */,
 				8657FF302601DB6E00EEE99D /* Assets.xcassets */,
-				8657FF322601DB6E00EEE99D /* LaunchScreen.storyboard */,
 				8657FF352601DB6E00EEE99D /* Info.plist */,
 			);
 			path = ProductList;
@@ -172,10 +175,21 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
+		8678DB54260393ED00700858 /* IB */ = {
+			isa = PBXGroup;
+			children = (
+				8657FF322601DB6E00EEE99D /* LaunchScreen.storyboard */,
+				8657FF2D2601DB6D00EEE99D /* Main.storyboard */,
+				8678DB4E2603926300700858 /* ProductDetailViewController.xib */,
+			);
+			path = IB;
+			sourceTree = "<group>";
+		};
 		8699D03B26021BBC00DA5958 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8699D03626021BB400DA5958 /* ProductTableViewController.swift */,
+				8678DB4D2603926300700858 /* ProductDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -320,6 +334,7 @@
 				8657FF342601DB6E00EEE99D /* LaunchScreen.storyboard in Resources */,
 				8657FF312601DB6E00EEE99D /* Assets.xcassets in Resources */,
 				8657FF2F2601DB6D00EEE99D /* Main.storyboard in Resources */,
+				8678DB502603926300700858 /* ProductDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +367,7 @@
 				8699D0562602207A00DA5958 /* Endpoints.swift in Sources */,
 				8699D04126021CAE00DA5958 /* Product.swift in Sources */,
 				8699D03726021BB400DA5958 /* ProductTableViewController.swift in Sources */,
+				8678DB4F2603926300700858 /* ProductDetailViewController.swift in Sources */,
 				8699D05E260223D200DA5958 /* ApiService.swift in Sources */,
 				8657FF2A2601DB6D00EEE99D /* SceneDelegate.swift in Sources */,
 			);

@@ -20,6 +20,13 @@ struct Product: Codable, Equatable {
   var applicationUri: String?
   var isTailored: Bool?
   var additionalInformation: AdditionalInfo?
+  var bundles: [String]?
+  var features: [Feature]?
+  var constraints: [Constraint]?
+  var eligibility: [Eligibility]?
+  var fees: [Fee]?
+  var depositRates: [DepositRate]?
+  
   static func == (lhs: Product, rhs: Product) -> Bool {
     return lhs.productId == rhs.productId &&
       lhs.effectiveFrom == rhs.effectiveFrom &&
@@ -34,6 +41,50 @@ struct Product: Codable, Equatable {
       lhs.isTailored == rhs.isTailored &&
       lhs.additionalInformation == rhs.additionalInformation
   }
+}
+
+struct Feature: Codable {
+  var featureType: String?
+  var additionalValue: String?
+  var additionalInfo: String?
+  var additionalInfoUri: String?
+}
+
+struct Constraint: Codable {
+  var constraintType: String?
+  var  additionalValue: String?
+  var additionalInfo: String?
+}
+
+struct Eligibility: Codable {
+  var eligibilityType: String?
+  var additionalValue: String?
+  var additionalInfo: String?
+  var discountEligibilityType: String?
+}
+
+struct Fee: Codable {
+  var name: String?
+  var feeType: String?
+  var amount: String?
+  var currency: String?
+  var discounts: [Discount]?
+  var additionalInfo: String?
+  var additionalValue: String?
+}
+
+struct Discount: Codable {
+  var description: String?
+  var discountType: String?
+  var amount: String?
+  var eligibility: [Eligibility]?
+}
+
+struct DepositRate: Codable {
+  var depositRateType: String?
+  var rate: String?
+  var calculationFrequency: String?
+  var applicationFrequency: String?
 }
 
 struct AdditionalInfo: Codable, Equatable {
@@ -51,6 +102,12 @@ struct AdditionalInfo: Codable, Equatable {
 
 struct ProductResponse: Codable {
   var data: ProductList?
+  var links: Links?
+  var meta: Meta?
+}
+
+struct ProductDetailResponse: Codable {
+  var data: Product?
   var links: Links?
   var meta: Meta?
 }
