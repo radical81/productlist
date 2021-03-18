@@ -25,7 +25,6 @@
 		8699D0562602207A00DA5958 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D0552602207A00DA5958 /* Endpoints.swift */; };
 		8699D05E260223D200DA5958 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D05D260223D200DA5958 /* ApiService.swift */; };
 		8699D0632602273E00DA5958 /* Commbank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D0622602273E00DA5958 /* Commbank.swift */; };
-		8699D07026022E6B00DA5958 /* ProductDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D06F26022E6B00DA5958 /* ProductDataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,6 @@
 		8699D0552602207A00DA5958 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		8699D05D260223D200DA5958 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		8699D0622602273E00DA5958 /* Commbank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commbank.swift; sourceTree = "<group>"; };
-		8699D06F26022E6B00DA5958 /* ProductDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +193,6 @@
 		8699D05226021FFE00DA5958 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				8699D06F26022E6B00DA5958 /* ProductDataDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 				8699D04626021F1100DA5958 /* Links.swift in Sources */,
 				8657FF282601DB6D00EEE99D /* AppDelegate.swift in Sources */,
 				8699D04B26021F8E00DA5958 /* Meta.swift in Sources */,
-				8699D07026022E6B00DA5958 /* ProductDataDelegate.swift in Sources */,
 				8699D0562602207A00DA5958 /* Endpoints.swift in Sources */,
 				8699D04126021CAE00DA5958 /* Product.swift in Sources */,
 				8699D03726021BB400DA5958 /* ProductTableViewController.swift in Sources */,

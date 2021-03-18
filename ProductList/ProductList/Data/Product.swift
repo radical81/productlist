@@ -49,7 +49,7 @@ struct AdditionalInfo: Codable, Equatable {
     }
 }
 
-struct GetProductsResponse: Codable {
+struct ProductResponse: Codable {
   var data: ProductList?
   var links: Links?
   var meta: Meta?
