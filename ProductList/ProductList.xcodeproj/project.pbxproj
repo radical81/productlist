@@ -14,6 +14,8 @@
 		8657FF342601DB6E00EEE99D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8657FF322601DB6E00EEE99D /* LaunchScreen.storyboard */; };
 		8657FF3F2601DB6E00EEE99D /* ProductListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657FF3E2601DB6E00EEE99D /* ProductListTests.swift */; };
 		8657FF4A2601DB6F00EEE99D /* ProductListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657FF492601DB6F00EEE99D /* ProductListUITests.swift */; };
+		8678DB282603725600700858 /* DataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678DB272603725600700858 /* DataTaskMock.swift */; };
+		8678DB302603727500700858 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678DB2F2603727500700858 /* MockSession.swift */; };
 		8699D03726021BB400DA5958 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D03626021BB400DA5958 /* ProductTableViewController.swift */; };
 		8699D04126021CAE00DA5958 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D04026021CAE00DA5958 /* Product.swift */; };
 		8699D04626021F1100DA5958 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699D04526021F1100DA5958 /* Links.swift */; };
@@ -55,6 +57,8 @@
 		8657FF452601DB6F00EEE99D /* ProductListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8657FF492601DB6F00EEE99D /* ProductListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListUITests.swift; sourceTree = "<group>"; };
 		8657FF4B2601DB6F00EEE99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8678DB272603725600700858 /* DataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskMock.swift; sourceTree = "<group>"; };
+		8678DB2F2603727500700858 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		8699D03626021BB400DA5958 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 		8699D04026021CAE00DA5958 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8699D04526021F1100DA5958 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		8657FF3D2601DB6E00EEE99D /* ProductListTests */ = {
 			isa = PBXGroup;
 			children = (
+				8678DB262603724100700858 /* Mocks */,
 				8657FF3E2601DB6E00EEE99D /* ProductListTests.swift */,
 				8657FF402601DB6E00EEE99D /* Info.plist */,
 			);
@@ -144,6 +149,15 @@
 				8657FF4B2601DB6F00EEE99D /* Info.plist */,
 			);
 			path = ProductListUITests;
+			sourceTree = "<group>";
+		};
+		8678DB262603724100700858 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8678DB272603725600700858 /* DataTaskMock.swift */,
+				8678DB2F2603727500700858 /* MockSession.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		8699D03B26021BBC00DA5958 /* ViewControllers */ = {
@@ -336,6 +350,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8678DB302603727500700858 /* MockSession.swift in Sources */,
+				8678DB282603725600700858 /* DataTaskMock.swift in Sources */,
 				8657FF3F2601DB6E00EEE99D /* ProductListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

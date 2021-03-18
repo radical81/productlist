@@ -28,31 +28,3 @@ class ApiService {
     task.resume()
   }
 }
-
-
-class DataTaskMock: URLSessionDataTask {
-    private let closure: () -> Void
-
-    init(closure: @escaping () -> Void) {
-      self.closure = closure
-    }
-
-    override func resume() {
-      // Don't actually resume any task. Run the closure.
-      closure()
-    }
-}
-class MockSession: URLSession {
-  // We can inject our own data and error for testing purposes.
-  var data: Data?
-  var error: Error?
-
-  override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-      let data = self.data
-      let error = self.error
-
-      return DataTaskMock {
-          completionHandler(data, nil, error)
-      }
-  }
-}
