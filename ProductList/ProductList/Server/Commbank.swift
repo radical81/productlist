@@ -10,6 +10,8 @@ import Foundation
 class Commbank {
 
   var delegate: ProductDataDelegate?
+  var api: ApiService?
+  var queue: DispatchQueue? = .main
   
   var products: [Product]? {
     didSet {
@@ -31,8 +33,8 @@ class Commbank {
     }
   }
   
-  func getProducts() {
-    ApiService.shared.fetchData(endpoint: Endpoints.products.rawValue,  completion: { data, response, error in
+  func getProducts(completion: @escaping(GetProductsResponse) -> Void) {
+    api?.fetchData(endpoint: Endpoints.products.rawValue,  completion: { data, response, error in
       if let error = error {
           self.handleClientError(error)
           return
@@ -44,15 +46,17 @@ class Commbank {
       }
             
       guard let jsonData = data else {return}
-      DispatchQueue.main.sync {
-        do {
-          let productsResponse = try JSONDecoder().decode(GetProductsResponse.self, from: jsonData)
-          print("Response data:\n \(productsResponse)")
-          self.products = productsResponse.data?.products
-        } catch let jsonErr {
-          print(jsonErr)
+      
+      do {
+        let productsResponse = try JSONDecoder().decode(GetProductsResponse.self, from: jsonData)
+        print("Response data:\n \(productsResponse)")
+        self.queue?.sync {
+          completion(productsResponse)
         }
+      } catch let jsonErr {
+        print(jsonErr)
       }
+      
     })
   }
   
