@@ -37,6 +37,9 @@ class ProductListTests: XCTestCase {
     let products = [Product(productId: "ad22b1f0967349e8a5d586afe7f0d845", effectiveFrom: nil, effectiveTo: nil, lastUpdated: nil, productCategory: nil, name: nil, description: nil, brand: "CBA", brandName: nil, applicationUri: nil, isTailored: false, additionalInformation: nil),
                     Product(productId: "7aff9e0e85e6450eb052d4ff2e953223", effectiveFrom: "2011-05-10T04:00:00Z", effectiveTo: "9999-12-30T13:00:00Z", lastUpdated: nil, productCategory: nil, name: nil, description: nil, brand: nil, brandName: nil, applicationUri: nil, isTailored: nil, additionalInformation: nil)
         ]
+    let links = Links(self: "/cds-au/v1/banking/products?page-size=2", first: "/cds-au/v1/banking/products?page-size=2&page=1", next: "/cds-au/v1/banking/products?page-size=2&page=2", last: "/cds-au/v1/banking/products?page-size=2&page=14")
+    let meta = Meta(totalRecords: 28, totalPages: 14)
+    
     if let path = Bundle(for: type(of: self)).path(forResource: "Products", ofType: "json") {
       do {
         let jsonStr = try String(contentsOfFile: path)
@@ -50,6 +53,8 @@ class ProductListTests: XCTestCase {
           commbank.fetchProducts { response in
             print(response)
             XCTAssertEqual(products, response.data?.products)
+            XCTAssertEqual(links, response.links)
+            XCTAssertEqual(meta, response.meta)
           }
         }
 

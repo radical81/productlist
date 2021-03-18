@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Meta: Codable {
+struct Meta: Codable, Equatable {
   var totalRecords: Int?
   var totalPages: Int?
+  
+  static func == (lhs: Meta, rhs: Meta) -> Bool {
+    return lhs.totalRecords == rhs.totalRecords &&
+      lhs.totalPages == rhs.totalPages
+  }
 }
