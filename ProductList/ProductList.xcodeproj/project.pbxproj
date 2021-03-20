@@ -131,8 +131,6 @@
 			children = (
 				8678DB54260393ED00700858 /* IB */,
 				8699D0542602200E00DA5958 /* Server */,
-				8699D0532602200600DA5958 /* Helpers */,
-				8699D05226021FFE00DA5958 /* Delegates */,
 				8699D03F26021C8800DA5958 /* Data */,
 				8699D03B26021BBC00DA5958 /* ViewControllers */,
 				8657FF272601DB6D00EEE99D /* AppDelegate.swift */,
@@ -211,20 +209,6 @@
 				8699D04A26021F8E00DA5958 /* Meta.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		8699D05226021FFE00DA5958 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		8699D0532602200600DA5958 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8699D0542602200E00DA5958 /* Server */ = {
