@@ -48,9 +48,36 @@ class ProductDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     wait()
+    checkFontSizes()
   }
   
   //Private methods
+  
+  private func resizeFonts(ofSize: CGFloat) {
+    productName?.font = UIFont.boldSystemFont(ofSize: ofSize)
+    productDesc?.font = UIFont.systemFont(ofSize: ofSize)
+  }
+  
+  private func checkFontSizes() {
+    let preferredSize = UIApplication.shared.preferredContentSizeCategory
+    print("Preferred size \(preferredSize)")
+    switch preferredSize {
+      case .accessibilityLarge:
+        resizeFonts(ofSize: 20)
+      break
+      case .accessibilityExtraLarge:
+        resizeFonts(ofSize: 25)
+      break
+      case .accessibilityExtraExtraLarge:
+        resizeFonts(ofSize: 35)
+      break
+      case .accessibilityExtraExtraExtraLarge:
+        resizeFonts(ofSize: 45)
+      break
+      default:
+        resizeFonts(ofSize: 17)
+    }
+  }
   
   private func populateData(id : String) {
     commbank.api = ApiService.shared
@@ -88,5 +115,10 @@ class ProductDetailViewController: UIViewController {
       web.target = URL(string: moreInfoUrl)
       self.navigationController?.pushViewController(web, animated: true)
     }
+  }
+  
+  //Accessibility Font Sizing
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    self.view.layoutIfNeeded()
   }
 }
