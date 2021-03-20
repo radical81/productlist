@@ -19,11 +19,16 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vML-gn-lPy">
                         <rect key="frame" x="10" y="65" width="41.5" height="20.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="hbY-qF-FRZ"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="hbY-qF-FRZ">
+                                <variation key="heightClass=compact-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        </variation>
                     </label>
                 </subviews>
             </view>
