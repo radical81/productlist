@@ -24,26 +24,33 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-no-VJh">
                     <rect key="frame" x="10" y="54" width="394" height="798"/>
                     <subviews>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="aY3-VA-AQX">
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-VA-AQX">
                             <rect key="frame" x="187" y="389" width="20" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pwc-86-cq3">
-                            <rect key="frame" x="41" y="50" width="200" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwc-86-cq3">
+                            <rect key="frame" x="139" y="50" width="116.5" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-co-Z7W">
-                            <rect key="frame" x="43" y="121" width="198" height="510"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-co-Z7W">
+                            <rect key="frame" x="20" y="111" width="354" height="667"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="JC5-co-Z7W" firstAttribute="top" secondItem="Pwc-86-cq3" secondAttribute="bottom" constant="40" id="BCp-65-RdY"/>
+                        <constraint firstItem="JC5-co-Z7W" firstAttribute="leading" secondItem="vkw-no-VJh" secondAttribute="leading" constant="20" id="Fhe-Ak-y2e"/>
+                        <constraint firstItem="aY3-VA-AQX" firstAttribute="centerX" secondItem="vkw-no-VJh" secondAttribute="centerX" id="Kib-ww-IO6"/>
+                        <constraint firstAttribute="bottom" secondItem="JC5-co-Z7W" secondAttribute="bottom" constant="20" id="V5Z-t3-h3s"/>
+                        <constraint firstAttribute="trailing" secondItem="JC5-co-Z7W" secondAttribute="trailing" constant="20" id="fqd-Lg-dem"/>
+                        <constraint firstItem="Pwc-86-cq3" firstAttribute="centerX" secondItem="vkw-no-VJh" secondAttribute="centerX" id="hM0-gz-JfG"/>
+                        <constraint firstItem="Pwc-86-cq3" firstAttribute="top" secondItem="vkw-no-VJh" secondAttribute="top" constant="50" id="n40-WN-ZtJ"/>
+                        <constraint firstItem="aY3-VA-AQX" firstAttribute="centerY" secondItem="vkw-no-VJh" secondAttribute="centerY" id="zeO-4I-RSI"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="10"/>
