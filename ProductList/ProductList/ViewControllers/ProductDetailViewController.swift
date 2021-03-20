@@ -43,12 +43,21 @@ class ProductDetailViewController: UIViewController {
     }
   }
 
+  var dataLoaded: Bool = false {
+    didSet {
+      spinner.isHidden = dataLoaded
+      productName.isHidden = !dataLoaded
+      productDesc.isHidden = !dataLoaded
+      moreInfo.isHidden = !dataLoaded || product?.applicationUri == nil
+    }
+  }
+  
   //Life cycle methods
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    wait()
     checkFontSizes()
+    dataLoaded = false
   }
   
   //Private methods
@@ -87,24 +96,11 @@ class ProductDetailViewController: UIViewController {
       self.meta = response.meta
     })
   }
+  
   private func populateDetails(product: Product) {
     self.productName.text = product.name
     self.productDesc.text = product.description    
-    self.showDetails()
-  }
-  
-  private func wait() {
-    spinner.isHidden = false
-    productName.isHidden = true
-    productDesc.isHidden = true
-    moreInfo.isHidden = true
-  }
-  
-  private func showDetails() {
-    spinner.isHidden = true
-    productName.isHidden = false
-    productDesc.isHidden = false
-    moreInfo.isHidden = (product?.applicationUri == nil)
+    dataLoaded = true
   }
   
   //IB Actions
