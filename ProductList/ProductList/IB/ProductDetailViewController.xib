@@ -23,39 +23,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-no-VJh">
-                    <rect key="frame" x="10" y="54" width="394" height="798"/>
+                    <rect key="frame" x="20" y="64" width="374" height="536"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-VA-AQX">
-                            <rect key="frame" x="187" y="389" width="20" height="20"/>
+                            <rect key="frame" x="177" y="258" width="20" height="20"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwc-86-cq3">
-                            <rect key="frame" x="139" y="50" width="116.5" height="21"/>
+                            <rect key="frame" x="129" y="50" width="116.5" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-co-Z7W">
-                            <rect key="frame" x="20" y="111" width="354" height="587"/>
+                            <rect key="frame" x="20" y="111" width="334" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-eC-EiV">
-                            <rect key="frame" x="164.5" y="748" width="65" height="30"/>
-                            <state key="normal" title="More Info"/>
-                            <connections>
-                                <action selector="didTapMoreInfo:" destination="-1" eventType="touchUpInside" id="Nz2-rI-Jf7"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="JC5-co-Z7W" firstAttribute="top" secondItem="Pwc-86-cq3" secondAttribute="bottom" constant="40" id="BCp-65-RdY"/>
                         <constraint firstItem="JC5-co-Z7W" firstAttribute="leading" secondItem="vkw-no-VJh" secondAttribute="leading" constant="20" id="Fhe-Ak-y2e"/>
-                        <constraint firstAttribute="bottom" secondItem="DFI-eC-EiV" secondAttribute="bottom" constant="20" id="HfI-dp-rhT"/>
                         <constraint firstItem="aY3-VA-AQX" firstAttribute="centerX" secondItem="vkw-no-VJh" secondAttribute="centerX" id="Kib-ww-IO6"/>
-                        <constraint firstItem="DFI-eC-EiV" firstAttribute="top" secondItem="JC5-co-Z7W" secondAttribute="bottom" constant="50" id="V5Z-t3-h3s"/>
-                        <constraint firstItem="DFI-eC-EiV" firstAttribute="centerX" secondItem="vkw-no-VJh" secondAttribute="centerX" id="dXt-Lr-ENz"/>
                         <constraint firstAttribute="trailing" secondItem="JC5-co-Z7W" secondAttribute="trailing" constant="20" id="fqd-Lg-dem"/>
                         <constraint firstItem="Pwc-86-cq3" firstAttribute="centerX" secondItem="vkw-no-VJh" secondAttribute="centerX" id="hM0-gz-JfG"/>
                         <constraint firstItem="Pwc-86-cq3" firstAttribute="top" secondItem="vkw-no-VJh" secondAttribute="top" constant="50" id="n40-WN-ZtJ"/>
@@ -63,18 +53,35 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
+                            <integer key="value" value="50"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-eC-EiV">
+                    <rect key="frame" x="100" y="620" width="214" height="42"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                    <state key="normal" title="More Info"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didTapMoreInfo:" destination="-1" eventType="touchUpInside" id="Nz2-rI-Jf7"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vkw-no-VJh" secondAttribute="bottom" constant="10" id="99z-DI-xK7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vkw-no-VJh" secondAttribute="trailing" constant="10" id="aGi-Zn-8Ka"/>
-                <constraint firstItem="vkw-no-VJh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="h4w-x5-B1p"/>
-                <constraint firstItem="vkw-no-VJh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="sOX-UQ-uee"/>
+                <constraint firstItem="DFI-eC-EiV" firstAttribute="top" secondItem="vkw-no-VJh" secondAttribute="bottom" constant="20" id="S1u-rd-9Ut"/>
+                <constraint firstItem="DFI-eC-EiV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="ZVb-V0-qUX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vkw-no-VJh" secondAttribute="trailing" constant="20" id="aGi-Zn-8Ka"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DFI-eC-EiV" secondAttribute="trailing" constant="100" id="eaC-AA-7Vu"/>
+                <constraint firstItem="vkw-no-VJh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="h4w-x5-B1p"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DFI-eC-EiV" secondAttribute="bottom" constant="200" id="nQM-qf-Qit"/>
+                <constraint firstItem="vkw-no-VJh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="sOX-UQ-uee"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="68.973214285714278"/>
         </view>

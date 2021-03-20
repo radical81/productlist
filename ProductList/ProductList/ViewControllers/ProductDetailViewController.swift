@@ -62,8 +62,7 @@ class ProductDetailViewController: UIViewController {
   }
   private func populateDetails(product: Product) {
     self.productName.text = product.name
-    self.productDesc.text = product.description
-    self.title = "Find out more"
+    self.productDesc.text = product.description    
     self.showDetails()
   }
   
