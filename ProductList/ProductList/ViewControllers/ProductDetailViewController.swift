@@ -9,43 +9,64 @@ import UIKit
 
 class ProductDetailViewController: UIViewController {
 
+  @IBOutlet weak var spinner: UIActivityIndicatorView!
   @IBOutlet weak var productName: UILabel!
+  @IBOutlet weak var productDesc: UILabel!
+  
   let commbank = Commbank()
-  var productId: String?
-  var response: ProductDetailResponse?
+  var productId: String? {
+    didSet {
+      if let value = productId {
+        self.populateData(id: value)
+      }
+    }
+  }
+  var response: ProductDetailResponse? {
+    didSet {
+      if let value = response {
+        self.product = value.data
+      }
+    }
+  }
+  
   var links: Links?
   var meta: Meta?
+  var product: Product? {
+    didSet {
+      if let value = product {
+        self.populateDetails(product: value)
+      }
+    }
+  }
 
-  
-  override func viewDidLoad() {
-      super.viewDidLoad()
-      commbank.api = ApiService.shared
-    if let id = productId {
-      commbank.fetchProductDetail(productId: id, completion: { response in
+  private func populateData(id : String) {
+    commbank.api = ApiService.shared
+    commbank.fetchProductDetail(productId: id, completion: { response in
       self.response = response
       self.links = response.links
       self.meta = response.meta
-        print("detail response \(response)")
-        self.productName.text = response.data?.name
     })
-
-    }
-    
   }
-
-      
-        
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  private func populateDetails(product: Product) {
+    self.productName.text = product.name
+    self.productDesc.text = product.description
+    self.showDetails()
+  }
+  
+  private func wait() {
+    spinner.isHidden = false
+    productName.isHidden = true
+    productDesc.isHidden = true
+  }
+  
+  private func showDetails() {
+    spinner.isHidden = true
+    productName.isHidden = false
+    productDesc.isHidden = false
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    wait()
+  }
 }
